@@ -56,7 +56,7 @@ public class DriveSubsystem extends SubsystemBase {
 
     // invert left motors from the right motors because they are inverted 180 degrees
     m_leftTalon.setInverted(true);
-    
+    m_leftFollowerTalon.setInverted(true);
     
     
   }
