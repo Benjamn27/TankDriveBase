@@ -61,16 +61,15 @@ public class DriveSubsystem extends SubsystemBase {
     
   }
 
-  public void drive(double left, double right) {
+  public void drive(double power, double rotation) {
     //Drive command
-     m_robotDrive.arcadeDrive(left, right);
+     m_robotDrive.arcadeDrive(power, rotation);
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-    final XboxController driveController = new XboxController(Constants.XboxControllerPort);
-    m_robotDrive.arcadeDrive(-driveController.getLeftY(), -driveController.getRightY());
+  
   
   }
 

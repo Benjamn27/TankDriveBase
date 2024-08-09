@@ -29,12 +29,15 @@ public class RobotContainer {
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the button bindings
-  
+    driveSubsystem.setDefaultCommand(
 
-  JoystickButton yButton = new JoystickButton(driveController, XboxController.Button.kY.value);
-  JoystickButton xButton = new JoystickButton(driveController, XboxController.Button.kX.value);
-  JoystickButton aButton = new JoystickButton(driveController, XboxController.Button.kA.value);
-  JoystickButton bButton = new JoystickButton(driveController, XboxController.Button.kB.value);
+        new RunCommand(
+                () -> {
+                  driveSubsystem.drive(0.55*driveController.getLeftY(), 0.55*driveController.getRightX());
+      }
+        , driveSubsystem)
+    );
+
 
   
   }
